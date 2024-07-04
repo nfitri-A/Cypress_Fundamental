@@ -23,3 +23,28 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('login', (username, password) => {
+    cy.clearCookies()
+    cy.clearLocalStorage()
+    cy.get('#user_login').clear()
+    cy.get('#user_login').type(username)
+
+    cy.get('input[name="user_password"]').clear()
+    cy.get('input[name="user_password"]').type(password)
+
+    cy.get('input[name="submit"]').click()
+})
+
+Cypress.Commands.add('paybills', (Ammount) => {
+    cy.clearCookies()
+    cy.clearLocalStorage
+    cy.get('#sp_amount').type(Ammount)
+})
+
+Cypress.Commands.add('paybills1', (Descreption) => {
+    cy.clearCookies()
+    cy.clearLocalStorage
+    cy.get('#sp_description').type(Descreption)
+    cy.get('.btn-primary').contains('Pay').click()
+})
