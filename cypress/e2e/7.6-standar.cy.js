@@ -25,13 +25,13 @@ describe('Login with inputs', () => {
          
               
             });
-        });
+       
     
-  // it('go to the paybills menu', () => {
-  //   cy.visit('http://zero.webappsecurity.com/index.html')
-  //   cy.get('#onlineBankingMenu').contains('Online Banking').click({ timeout: 10000})   
-  //   cy.get('#pay_bills_link').contains('Pay Bills').click({ timeout: 10000})
+  it('go to the paybills menu', () => {
+    cy.visit('http://zero.webappsecurity.com/index.html')
+    cy.get('#onlineBankingMenu').contains('Online Banking').click({ timeout: 10000})   
+    cy.get('#pay_bills_link').contains('Pay Bills').click({ timeout: 10000})
 
-  
-
+});
+});
 

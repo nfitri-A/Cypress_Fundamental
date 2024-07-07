@@ -37,14 +37,14 @@ Cypress.Commands.add('login', (username, password) => {
 })
 
 Cypress.Commands.add('paybills', (Ammount) => {
-    cy.clearCookies()
-    cy.clearLocalStorage
+  
     cy.get('#sp_amount').type(Ammount)
 })
 
 Cypress.Commands.add('paybills1', (Descreption) => {
-    cy.clearCookies()
-    cy.clearLocalStorage
+
     cy.get('#sp_description').type(Descreption)
     cy.get('.btn-primary').contains('Pay').click()
+    cy.get('#alert_content').should('contain.text', 'The payment was successfully submitted.')
+
 })
